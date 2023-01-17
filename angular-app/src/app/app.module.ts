@@ -15,6 +15,7 @@ import { PostsListComponent } from './posts/posts-list/posts-list.component';
 
 import {  isDevMode } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducer } from './store/app.state';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
    
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter: counterReducer}),
+    StoreModule.forRoot(appReducer),
     FormsModule,
      // Instrumentation must be imported after importing StoreModule (config is optional)
      StoreDevtoolsModule.instrument({
