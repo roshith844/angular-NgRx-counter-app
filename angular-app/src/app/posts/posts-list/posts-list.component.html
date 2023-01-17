@@ -1,9 +1,13 @@
 <app-header></app-header>
+<router-outlet></router-outlet>
 <div class="row">
-     <div class="col-md-12">
+     <div class="col-md-8">
           <h3>
                Posts List
           </h3>
+          <div>
+               <a href="" [routerLink]="['posts/add']" >Add Post</a>
+          </div>
           <table class="table" *ngIf = "posts | async as postsData">
                <thead>
                     <tr>
@@ -22,5 +26,10 @@
                </tbody>
               
           </table>
+          
      </div>
+     <div class="col-md-4">
+          <router-outlet></router-outlet>
+     </div>
+     
 </div>
